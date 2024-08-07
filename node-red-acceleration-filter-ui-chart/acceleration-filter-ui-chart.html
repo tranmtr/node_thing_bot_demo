@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('acceleration-filter-ui-chart', {
+        category: 'function',
+        color: '#85d49f',
+        defaults: {
+            name: { value: "" },
+            maxPoints: { value: 50, required: true, validate: RED.validators.number() }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'file.svg',
+        label: function() {
+            return this.name || "acceleration-filter-ui-chart";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="acceleration-filter-ui-chart">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-maxPoints"><i class="fa fa-hashtag"></i> Max Points</label>
+        <input type="number" id="node-input-maxPoints" placeholder="50">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="acceleration-filter-ui-chart">
+    <p>A simple node to filter acceleration data and display on UI Chart.</p>
+</script>

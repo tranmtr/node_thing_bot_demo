@@ -3,16 +3,7 @@
         category: 'input',
         color: '#a6bbcf',
         defaults: {
-            name: {value: ""}, 
-            topic: {value: "#"},
-            qos: {value: "1"},
-            datatype: {value: "auto-detect"},
-            broker: {type: "mqtt-broker", required: true},
-            port: {value: "8883"}, // Cổng MQTT cho TLS
-            username: {value: ""},
-            password: {value: ""},
-            verifyServerCert: {value: true},
-            usetls: {value: true} // Sử dụng TLS mặc định là true
+            name: {value: ""} // Chỉ cần tên
         },
         inputs: 0,
         outputs: 1,
@@ -27,46 +18,6 @@
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-    <div class="form-row">
-        <label for="node-input-topic"><i class="fa fa-wifi"></i> Topic</label>
-        <input type="text" id="node-input-topic" placeholder="Topic">
-    </div>
-    <div class="form-row">
-        <label for="node-input-qos"><i class="fa fa-signal"></i> QoS</label>
-        <select id="node-input-qos">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-        </select>
-    </div>
-    <div class="form-row">
-        <label for="node-input-datatype"><i class="fa fa-code"></i> Data Type</label>
-        <input type="text" id="node-input-datatype" placeholder="auto-detect">
-    </div>
-    <div class="form-row">
-        <label for="node-input-broker"><i class="fa fa-cloud"></i> Broker</label>
-        <input type="text" id="node-input-broker" placeholder="Broker">
-    </div>
-    <div class="form-row">
-        <label for="node-input-port"><i class="fa fa-port"></i> Port</label>
-        <input type="text" id="node-input-port" placeholder="Port" value="8883">
-    </div>
-    <div class="form-row">
-        <label for="node-input-username"><i class="fa fa-user"></i> Username</label>
-        <input type="text" id="node-input-username" placeholder="Username">
-    </div>
-    <div class="form-row">
-        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
-        <input type="password" id="node-input-password" placeholder="Password">
-    </div>
-    <div class="form-row">
-        <label for="node-input-verifyServerCert"><i class="fa fa-certificate"></i> Verify Server Certificate</label>
-        <input type="checkbox" id="node-input-verifyServerCert">
-    </div>
-    <div class="form-row">
-        <label for="node-input-usetls"><i class="fa fa-lock"></i> Use TLS</label>
-        <input type="checkbox" id="node-input-usetls" checked>
     </div>
 </script>
 
