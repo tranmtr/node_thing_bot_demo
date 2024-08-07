@@ -1,0 +1,36 @@
+1. Problem:
+	- Hiện tại những hệ thống IOT, nhà thông minh, tưới tiêu tự động, xe tự hành ... đang rất phát triển. Nhưng bên cạnh đó, chi
+phí cũng như kiến thức về công nghệ để lắp đặt, sử dụng, thay đổi những thứ đó theo nhu cầu cá nhân là rất lớn.
+2. Solution
+	- Tạo ra một hệ thống IOT liên hệ giữa co-bot và low-code giúp người dùng không am hiểu về công nghệ có thể tự mình lắp đặt,
+sử dụng, sửa chữa, thay đổi theo nhu cầu bản thân một cách dễ dàng nhất.
+3. Key metrics
+	- Những đánh giá trên thang điểm của khách hàng.
+	- Độ tiếp cận được với nhóm khách hàng.
+	- Mức độ mở rộng sang các nhóm khách hàng khác.
+4. Unique value proposition
+	- Thông điệp: Ai cũng có thể sử dụng được hệ thống co-bot và low-code.
+5. Unfair Advantage
+	- Sự đơn giản hóa một thức phức tạp
+6. Channels
+	- Tìm hiểu thêm về nhu cầu của khách hàng, những phát sinh trong quá trình sử dụng.
+	- Thêm các chức năng mới phù hợp với nhiều nhóm khách hàng hơn.
+7. Customer segments
+	- Trẻ em, nông dân, công nhân, những cửa hàng vừa và nhỏ, ...
+8. Early adopters
+	- Trẻ em, những cửa hàng vừa và nhỏ
+9. Cost structure
+
+What things will you buy?
+
+	- Capital (vốn): 
+	- Fixed : 
+	- Variable (phát sinh): 
+	- Profit share: 
+10. Revenue streams
+
+What ways will you repeatedly make money? E.g:
+
+	- Service:
+	- Membership: 
+	- Product: bán sản phẩm online

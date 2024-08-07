@@ -1,0 +1,91 @@
+<script type="text/javascript">
+    RED.nodes.registerType('compatible-with-ui-table', {
+        category: 'function',
+        color: '#74f274',
+        defaults: {
+            name: {value: ""},
+            showDevice: {value: false},
+            showSensorType: {value: false},
+            showDataType: {value: false},
+            showTimestamp: {value: true},
+            showValue: {value: false},
+            showX: {value: false},
+            showY: {value: false},
+            showZ: {value: false}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-table",
+        label: function() {
+            return this.name || "compatible-with-ui-table";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="compatible-with-ui-table">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Node Name</label>
+        <input type="text" id="node-input-name" name="name"/>
+    </div>
+    
+    <div class="form-row">
+        <label><i class="fa fa-check-square"></i> Show Fields</label>
+        <div class="form-fields">
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showDevice" name="showDevice"/>
+                <label for="node-input-showDevice">Device</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showSensorType" name="showSensorType"/>
+                <label for="node-input-showSensorType">Sensor Type</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showDataType" name="showDataType"/>
+                <label for="node-input-showDataType">Data Type</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showTimestamp" name="showTimestamp"/>
+                <label for="node-input-showTimestamp">Timestamp</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showValue" name="showValue"/>
+                <label for="node-input-showValue">Value</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showX" name="showX"/>
+                <label for="node-input-showX">X</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showY" name="showY"/>
+                <label for="node-input-showY">Y</label>
+            </div>
+            <div class="field-option">
+                <input type="checkbox" id="node-input-showZ" name="showZ"/>
+                <label for="node-input-showZ">Z</label>
+            </div>
+        </div>
+    </div>
+</script>
+
+<style>
+    .form-row {
+        margin-bottom: 15px;
+    }
+
+    .form-fields {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-option {
+        margin-bottom: 10px;
+    }
+
+    .field-option input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    .field-option label {
+        font-size: 14px;
+    }
+</style>

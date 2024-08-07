@@ -1,0 +1,17 @@
+{
+    "name": "node-red-contrib-example-accel-data-device-sensor",
+    "version": "1.0.0",
+    "description": "Node-RED node to get accel data from a specific device and sensor type",
+    "main": "getAccelData.js",
+    "dependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "node-red" : {
+        "nodes": {
+            "getAccelData": "getAccelData.js"
+        }
+    }
+}

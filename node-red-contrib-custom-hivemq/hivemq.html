@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('hivemq', {
+        category: 'function',
+        color: '#963f52',
+        defaults: {
+            name: { value: "" },
+            broker: { value: "2cd0d770fc9e4de99263e34330dc866e.s1.eu.hivemq.cloud", required: true },
+            port: { value: 8883, required: true },
+            clientid: { value: "" },
+            username: { value: "" },
+            password: { value: "" },
+            keepalive: { value: 60 },
+            cleansession: { value: true },
+            topic: { value: "#", required: true },
+            qos: { value: 1 }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "font-awesome/fa-cloud",
+        label: function() {
+            return this.name || "hivemq";
+        },
+        oneditprepare: function() {
+            // Code to prepare the edit dialog
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="hivemq">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-brokerUrl"><i class="fa fa-cogs"></i> Broker URL</label>
+        <input type="text" id="node-input-brokerUrl" placeholder="mqtts://2cd0d770fc9e4de99263e34330dc866e.s1.eu.hivemq.cloud:8883">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-bars"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientId"><i class="fa fa-user"></i> Client ID</label>
+        <input type="text" id="node-input-clientId" placeholder="Client ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="fa fa-user"></i> Username</label>
+        <input type="text" id="node-input-username" placeholder="Username">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-lock"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ca"><i class="fa fa-certificate"></i> CA Certificate</label>
+        <input type="text" id="node-input-ca" placeholder="CA Certificate (Base64)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-verifyservercert"><i class="fa fa-check"></i> Verify Server Certificate</label>
+        <input type="checkbox" id="node-input-verifyservercert">
+    </div>
+</script>

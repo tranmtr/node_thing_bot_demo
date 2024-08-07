@@ -1,0 +1,84 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-sensor', {
+        category: 'function',
+        color: '#4fe0cf',
+        defaults: {
+            name: {value: ""}, 
+            device: {value: "Cobot2", required: true},
+            sensor: {value: "Gyro_accelerometer", required: true},
+            dataType: {value: "accel", required: true}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-cogs",
+        label: function() {
+            return this.name || "get-sensor";
+        },
+        oneditprepare: function() {
+            $("#node-input-name").val(this.name);
+            $("#node-input-device").val(this.device);
+            $("#node-input-sensor").val(this.sensor);
+            $("#node-input-dataType").val(this.dataType);
+
+            function updateDataTypeOptions() {
+                var sensor = $("#node-input-sensor").val();
+                var dataTypeOptions = {
+                    "Gyro_accelerometer": ["accel", "gyros"],
+                    "HumiditySensor": ["humidity"],
+                    "NEO-6M GPS": ["Latitude", "Longitude", "Altitude (meters)", "Speed (km/h)", "Course (degrees)", "Satellites"],
+                    "Ultrasonic Sensor": ["distance"]
+                };
+                
+                var options = dataTypeOptions[sensor] || [];
+                var dataTypeSelect = $("#node-input-dataType");
+
+                dataTypeSelect.empty();
+                options.forEach(function(option) {
+                    dataTypeSelect.append(new Option(option, option));
+                });
+            }
+
+            $("#node-input-sensor").change(updateDataTypeOptions);
+
+            // Cập nhật danh sách data type khi chuẩn bị chỉnh sửa
+            updateDataTypeOptions();
+        },
+        oneditsave: function() {
+            this.name = $("#node-input-name").val();
+            this.device = $("#node-input-device").val();
+            this.sensor = $("#node-input-sensor").val();
+            this.dataType = $("#node-input-dataType").val();
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="get-sensor">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="fa fa-cogs"></i> Device</label>
+        <input type="text" id="node-input-device" placeholder="Enter device ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-sensor"><i class="fa fa-thermometer"></i> Sensor</label>
+        <select id="node-input-sensor">
+            <option value="Gyro_accelerometer">Gyro_accelerometer</option>
+            <option value="HumiditySensor">Humidity Sensor</option>
+            <option value="NEO-6M GPS">NEO-6M GPS</option>
+            <option value="Ultrasonic Sensor">Ultrasonic Sensor</option>
+            <!-- Thêm các tùy chọn cảm biến khác nếu cần -->
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-dataType"><i class="fa fa-database"></i> Data Type</label>
+        <select id="node-input-dataType">
+            <!-- Tùy chọn loại dữ liệu sẽ được cập nhật bằng JavaScript -->
+        </select>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="get-sensor">
+    <p>A custom node to process data from a specified device and sensor.</p>
+</script>

@@ -1,0 +1,25 @@
+{
+    "name": "node-red-contrib-mqtt-accel",
+    "version": "1.0.0",
+    "description": "A Node-RED node that combines MQTT connection with MPU6050 accelerometer data processing.",
+    "main": "mqtt-accel.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "node-red",
+      "mqtt",
+      "accel",
+      "mpu6050"
+    ],
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+      "mqtt": "^4.2.8"
+    },
+    "node-red": {
+      "nodes": {
+        "mqtt-accel": "mqtt-accel.js"
+      }
+    }
+}

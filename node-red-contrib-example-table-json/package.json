@@ -1,0 +1,20 @@
+{
+    "name": "node-red-contrib-example-table-json",
+    "version": "1.0.0",
+    "description": "A Node-RED node that table json",
+    "main": "table-json.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "node-red-node-test-helper": "^0.3.4"
+    },
+    "devDependencies": {},
+    "node-red" : {
+        "nodes": {
+            "table-json": "table-json.js"
+        }
+    }
+  }

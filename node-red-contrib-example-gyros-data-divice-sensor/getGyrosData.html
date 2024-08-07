@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-gyros', {
+        category: 'function',
+        color: '#66abed',
+        defaults: {
+            name: {value: ""}, 
+            device: {value: ""},
+            sensorType: {value: ""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-cogs",
+        label: function() {
+            return this.name || "get-gyros";
+        },
+        oneditprepare: function() {
+            $("#node-input-name").val(this.name);
+            $("#node-input-device").val(this.device);
+            $("#node-input-sensorType").val(this.sensorType);
+        },
+        oneditsave: function() {
+            this.name = $("#node-input-name").val();
+            this.device = $("#node-input-device").val();
+            this.sensorType = $("#node-input-sensorType").val();
+        }
+    });
+</script>
+
+
+<script type="text/html" data-template-name="get-gyros">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="fa fa-cogs"></i> Device</label>
+        <input type="text" id="node-input-device" placeholder="Enter device ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-sensorType"><i class="fa fa-thermometer"></i> Sensor Type</label>
+        <input type="text" id="node-input-sensorType" placeholder="Enter sensor type">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="get-gyros">
+    <p>A custom node to process data from a specified device and sensor type.</p>
+</script>
+

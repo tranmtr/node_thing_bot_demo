@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sum-of-digits',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.svg",
+        label: function() {
+            return this.name||"sum-of-digits";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="sum-of-digits">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="sum-of-digits">
+    <p>A simple node that converts the message payloads into all sum-of-digits characters</p>
+</script>

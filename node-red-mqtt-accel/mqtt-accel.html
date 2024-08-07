@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('mqtt-accel', {
+        category: 'input',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ""}, 
+            maxPoints: {value: 10, required: true, validate: RED.validators.number()}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "mqtt.svg",
+        label: function() {
+            return this.name || "mqtt-accel";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="mqtt-accel">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-maxPoints"><i class="fa fa-hashtag"></i> Max Points</label>
+        <input type="number" id="node-input-maxPoints" placeholder="10">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="mqtt-accel">
+    <p>A Node-RED node that connects to an MQTT broker and processes accelerometer data from MPU6050 sensor.</p>
+</script>

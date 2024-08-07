@@ -1,0 +1,20 @@
+{
+    "name": "node-red-contrib-example-sum-of-digits",
+    "version": "1.0.0",
+    "description": "A Node-RED node that sum of digits",
+    "main": "sum-of-digits.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "node-red-node-test-helper": "^0.3.4"
+    },
+    "devDependencies": {},
+    "node-red" : {
+        "nodes": {
+            "sum-of-digits": "sum-of-digits.js"
+        }
+    }
+  }

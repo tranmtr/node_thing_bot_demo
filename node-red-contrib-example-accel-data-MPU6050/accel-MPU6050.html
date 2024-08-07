@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('accel-MPU6050', {
+        category: 'function',
+        color: '#85d49f',
+        defaults: {
+            name: { value: "" },
+            maxPoints: { value: 10, required: true, validate: RED.validators.number() }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'file.svg',
+        label: function() {
+            return this.name || "accel-MPU6050";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="accel-MPU6050">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-maxPoints"><i class="fa fa-hashtag"></i> Max Points</label>
+        <input type="number" id="node-input-maxPoints" placeholder="10">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="accel-MPU6050">
+    <p>A simple node to process accelerometer data from MPU6050 sensor.</p>
+</script>

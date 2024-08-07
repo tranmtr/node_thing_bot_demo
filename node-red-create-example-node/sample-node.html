@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sample', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            key1: { value: "" },
+            key2: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'node-red/alert.png',
+        label: function() {
+            return this.name || "sample";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sample">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-key1"><i class="icon-tag"></i> Key 1</label>
+        <input type="text" id="node-input-key1" placeholder="Key 1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-key2"><i class="icon-tag"></i> Key 2</label>
+        <input type="text" id="node-input-key2" placeholder="Key 2">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="sample">
+    <p>This is a sample node that demonstrates how to create a custom node in Node-RED.</p>
+</script>

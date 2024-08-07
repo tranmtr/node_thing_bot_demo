@@ -1,0 +1,16 @@
+{
+    "name": "node-red-compatible-with-ui-chart",
+    "version": "1.0.0",
+    "description": "A Node-RED node to process sensor data for ui_chart",
+    "main": "compatible-with-ui-chart.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "node-red": {
+        "nodes": {
+            "compatible-with-ui-chart": "compatible-with-ui-chart.js"
+        }
+    }
+}
