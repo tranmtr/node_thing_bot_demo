@@ -32,11 +32,28 @@ module.exports = function(RED) {
         });
 
         client.on('message', function (topic, message) {
-            var msg = {
-                topic: topic,
-                payload: message.toString()
-            };
-            node.send(msg);
+            // Giả sử dữ liệu JSON đã được gửi dưới dạng chuỗi
+            try {
+                var parsedMessage = JSON.parse(message.toString());
+
+                // Tạo đối tượng JSON với cấu trúc cần thiết
+                var output = {
+                    device: parsedMessage.device,
+                    sensorType: parsedMessage.sensorType,
+                    accel: parsedMessage.accel,
+                    gyros: parsedMessage.gyros
+                };
+
+                // Tạo đối tượng msg để gửi ra
+                var msg = {
+                    topic: topic,
+                    payload: output // Đưa dữ liệu JSON vào payload
+                };
+
+                node.send(msg);
+            } catch (e) {
+                node.error("Message parse error: " + e.message);
+            }
         });
 
         client.on('error', function (err) {
