@@ -1,0 +1,16 @@
+{
+    "name": "node-red-compatible-with-ui-gauge",
+    "version": "1.0.0",
+    "description": "A Node-RED node to process sensor data for ui_gauge",
+    "main": "compatible-with-ui-gauge.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "node-red": {
+        "nodes": {
+            "compatible-with-ui-gauge": "compatible-with-ui-gauge.js"
+        }
+    }
+}

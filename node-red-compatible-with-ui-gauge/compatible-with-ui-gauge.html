@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('compatible-with-ui-gauge', {
+        category: 'function',
+        color: '#6cade6',
+        defaults: {
+            name: { value: "" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'file.svg',
+        label: function() {
+            return this.name || "compatible-with-ui-gauge";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="compatible-with-ui-gauge">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="compatible-with-ui-gauge">
+    <p>A node to process sensor data and provide it in a format compatible with ui_gauge.</p>
+</script>
