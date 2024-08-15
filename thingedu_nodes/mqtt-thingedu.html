@@ -1,0 +1,102 @@
+<script type="text/javascript">
+  RED.nodes.registerType('mqtt-thingedu', {
+    category: 'function',
+    color: '#802a80',
+    defaults: {
+      name: { value: '' },
+      deviceId: { value: '', required: true },
+      sensorType: { value: '', required: true },
+      dataType: { value: '', required: true },
+      value: { value: '', required: true }
+    },
+    inputs: 0,
+    outputs: 1,
+    icon: 'inject.svg',
+    label: function() {
+      return this.name || 'mqtt-thingedu';
+    },
+    oneditprepare: function() {
+      $("#node-input-name").val(this.name);
+      $("#node-input-device").val(this.device);
+      $("#node-input-sensor").val(this.sensor);
+      $("#node-input-dataType").val(this.dataType);
+      $("#node-input-value").val(this.value);
+
+      function updateDatatypeOptions() {
+        var sensor = $("#node-input-sensor").val();
+        var dataTypeOptions = {
+          "Gyro_accelerometer": ["accel", "gyros"],
+          "ProximitySensor": ["distance"]
+        };
+
+        var options = dataTypeOptions[sensor] || [];
+        var dataTypeSelect = $("#node-input-dataType");
+
+        dataTypeSelect.empty();
+        options.forEach(function (option) {
+          dataTypeSelect.append(new Option(option, option));
+        });
+
+        updateValueOptions();
+      };
+
+      function updateValueOptions() {
+        var dataType = $("#node-input-dataType").val();
+        var valueOptions = {
+          "accel": ["x", "y", "z"],
+          "gyros": ["x", "y", "z"],
+          "distance": ["value"]
+        };
+
+        var options = valueOptions[dataType] || [];
+        var valueSelect = $("#node-input-value");
+
+        valueSelect.empty();
+        options.forEach(function (option) {
+          valueSelect.append(new Option(option, option));
+        });
+      };
+
+      $("#node-input-sensor").change(updateDataTypeOptions);
+      $("#node-input-dataType").change(updateValueOptions);
+
+      updateDataTypeOptions();
+    },
+    oneditsave: function () {
+      this.name = $("#node-input-name").val();
+      this.device = $("#node-input-device").val();
+      this.sensor = $("#node-input-sensor").val();
+      this.dataType = $("#node-input-dataType").val();
+      this.value = $("#node-input-value").val();
+    }
+
+  });
+</script>
+
+<script type="text/html" data-template-name="mqtt-sensor-custom">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Enter node name">
+  </div>
+  <div class="form-row">
+      <label for="node-input-device"><i class="fa fa-cogs"></i> Device</label>
+      <input type="text" id="node-input-device" placeholder="Enter device ID">
+  </div>
+  <div class="form-row">
+      <label for="node-input-sensor"><i class="fa fa-thermometer"></i> Sensor</label>
+      <select id="node-input-sensor">
+          <option value="Gyro_accelerometer">Gyro_accelerometer</option>
+          <option value="ProximitySensor">ProximitySensor</option>
+      </select>
+  </div>
+  <div class="form-row">
+      <label for="node-input-dataType"><i class="fa fa-filter"></i> Data Type</label>
+      <select id="node-input-dataType">
+      </select>
+  </div>
+  <div class="form-row">
+      <label for="node-input-value"><i class="fa fa-sort-numeric-asc"></i> Value</label>
+      <select id="node-input-value">
+      </select>
+  </div>
+</script>

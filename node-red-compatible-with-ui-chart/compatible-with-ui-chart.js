@@ -4,7 +4,7 @@ module.exports = function(RED) {
         var node = this;
 
         node.on('input', function(msg) {
-            msg.payload = msg.payload.data;
+            msg.payload = msg.payload.dataValue;
             node.send(msg);
         });
     }
